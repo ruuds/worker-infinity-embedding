@@ -22,6 +22,9 @@ RUN uv pip install -r /requirements.txt --system
 # install torch
 RUN pip install torch==2.5.1+cu124 --index-url https://download.pytorch.org/whl/test/cu124 --no-cache-dir
 
+# Upgrade transformers to support qwen
+RUN pip install --upgrade transformers>=4.51.0
+
 # Add src files
 ADD src .
 
